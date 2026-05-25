@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import logo from "../assets/logo-small.svg"
 
 function Header() {
@@ -9,10 +9,41 @@ function Header() {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    const navRef = useRef(null);
+    const handleClickOutside = (event) => {
+        if (navRef.current && !navRef.current.contains(event.target)) {
+            setIsMenuOpen(false);
+        }
+    }
+
+    const handleEscape = (event) => {
+        if(event.key === "Escape") {
+            setIsMenuOpen(false);
+        }
+    }
+
+    const handleLinkClick = () => {
+        setIsMenuOpen(false);
+    }
+
+    useEffect(() => {
+        document.addEventListener("mousedown", handleClickOutside);
+        document.addEventListener("keydown", handleEscape);
+        const navLinks = document.querySelectorAll(".nav-links a");
+        navLinks.forEach(link => {
+            link.addEventListener("click", handleLinkClick);
+        });
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("keydown", handleEscape);
+        };
+    }, []);
+
     return (
         <header>
             <div className="container">
-                <nav>
+                <nav ref={navRef}>
                     <a href="#" className="nav-logo">
                         <img src={logo} alt="brand logo" width={30} height={30} />
                         <span>Abdel Healthcare Limited</span>
