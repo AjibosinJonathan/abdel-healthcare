@@ -1,0 +1,158 @@
+:root {
+  /* Primary — #008FC3 */
+  --color-primary: #008FC3;
+  --color-primary-light: #40BFE1;
+  --color-primary-dark: #005680;
+  --text-dark: #000;
+
+  /* Secondary — #8CE0FF */
+  --color-secondary: #8CE0FF;
+  --color-secondary-light: #D6F4FF;
+  --color-secondary-dark: #34C4EB;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #40BFE1;
+    --color-primary-light: #8CE0FF;
+    --color-primary-dark: #008FC3;
+
+    --color-secondary: #34C4EB;
+    --color-secondary-light: #8CE0FF;
+    --color-secondary-dark: #0AAAD4;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: #DFF6FF;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pill-shape {
+  background-color: var(--color-primary);
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem 1.5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.hamburger {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-primary-dark);
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links-container {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.3s ease-in-out;
+}
+
+.nav-links-container.active {
+  grid-template-rows: 0fr;
+}
+
+.nav-links {
+  overflow: hidden;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding-top: 0;
+}
+
+.nav-links a {
+  font-size: 1rem;
+  display: block;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .nav-links-container {
+    width: 100%;
+    grid-template-rows: 0fr;
+    padding: 0 0.5rem;
+    transition: none;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    padding: 0.2rem 0;
+  }
+
+  .nav-links-container.active {
+    grid-template-rows: 1fr;
+    transition: grid-template-rows 0.3s ease-in-out;
+  }
+
+  .nav-links-container.active .nav-links {
+    padding: 1rem 0;
+  }
+
+  .pill-shape {
+    display: none;
+  }
+
+}
