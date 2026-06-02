@@ -3,6 +3,9 @@
   --color-primary: #008FC3;
   --color-primary-light: #40BFE1;
   --color-primary-dark: #005680;
+  --bgColor: #00AFEF;
+  --bgdark: #070707;
+  --btndark: #00394D;
   --text-dark: #000;
 
   /* Secondary — #8CE0FF */
@@ -130,6 +133,7 @@ nav a {
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 4rem 0;
 }
 
 .hero-text {
@@ -138,19 +142,140 @@ nav a {
   gap: 3rem;
 }
 
-.hero-text h1{
-  font-size: 3rem;
+.hero-text h1 {
+  font-size: clamp(2rem, 4vw + 0.5rem, 3rem);
   line-height: 4rem;
 }
 
 .hero-text p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.2rem);
   line-height: 2.5rem;
 }
 
-.hero-img1 {
-  float: right;
+.hero-cta {
+  background-color: var(--bgColor);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 2rem;
+  border: none;
 }
+
+.hero-cta p {
+  line-height: 1.9rem;
+}
+
+.bold-text {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.hero-btn {
+  background-color: var(--bgdark);
+  color: #fff;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem 2rem;
+  align-self: flex-start;
+}
+
+.hero-img {
+  max-width: 100%;
+  height: auto;
+  flex: 1;
+}
+
+/* Intro Section */
+
+.intro h2 {
+  text-align: center;
+  font-size: clamp(2rem, 2vw + 0.5rem, 3rem);
+  font-weight: 500;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 1.2fr;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  padding: 2.5rem 0;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card p {
+  line-height: 1.5rem;
+}
+
+.img-card {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  background-image: url("assets/autism-patient.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  min-height: 350px;
+  border-radius: 1rem;
+}
+
+.intro-btn {
+  background-color: var(--btndark);
+  color: #fff;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  align-self: auto;
+  text-align: center;
+}
+
+.img-card img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  .hero-flex {
+    flex-wrap: wrap;
+  }
+
+  .intro-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .img-card {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    background-image: none;
+    background-color: var(--btndark);
+    min-height: auto;
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+
+  .intro-btn {
+    background-color: var(--bgColor);
+  }
+}
+
 
 
 @media screen and (max-width: 768px) {
@@ -183,6 +308,40 @@ nav a {
 
   .pill-shape {
     display: none;
+  }
+
+  /* Hero Section */
+
+  .hero-text,
+  .hero-img {
+    flex: 1 1 400px;
+  }
+
+  .hero-flex {
+    flex-direction: column;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .img-card {
+    grid-column: 1;
+    background-image: url("assets/autism-patient.png");
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    min-height: 350px;
+    padding: 1rem;
+  }
+
+  .intro-btn {
+    background-color: var(--btndark);
+  }
+
+  .card {
+    padding: 1rem;
+    gap: 1rem;
   }
 
 }
