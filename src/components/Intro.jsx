@@ -1,5 +1,4 @@
 import Card from './Card';
-import introImg from '../assets/autism-patient.png';
 import shieldIcon from '../assets/shield.svg';
 import personIcon from '../assets/person.svg';
 
@@ -34,7 +33,6 @@ function Intro() {
                         altText={"Person Icon"}
                     />
                     <div className="img-card">
-                        {/* <img src={introImg} alt="autism patient" width={361} height={600} /> */}
                         <button className="intro-btn">Get a Call Now</button>
                     </div>
                 </div>
