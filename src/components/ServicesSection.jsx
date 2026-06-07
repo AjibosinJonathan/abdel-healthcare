@@ -9,6 +9,11 @@ import serviceImg6 from "../assets/service-img6.png"
 function ServicesSection() {
     return(
         <section className="container">
+            <div className="heading">
+                <h2>Our Services</h2>
+                <p>Explore our range of services tailored for your specific need</p>
+
+            </div>
             <div className="services">
                 <ServiceCard 
                     img={serviceImg1}
