@@ -437,6 +437,10 @@ nav a {
 }
 /* Footer Section */
 
+.footer {
+  padding: 2rem 0;
+}
+
 .footer-logo {
   display: flex;
   align-items: center;
