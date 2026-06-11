@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo-small.svg"
+import phoneIcon from "../assets/phone-icon.svg"
 
 function Header() {
 
@@ -29,10 +31,6 @@ function Header() {
     useEffect(() => {
         document.addEventListener("mousedown", handleClickOutside);
         document.addEventListener("keydown", handleEscape);
-        const navLinks = document.querySelectorAll(".nav-links a");
-        navLinks.forEach(link => {
-            link.addEventListener("click", handleLinkClick);
-        });
 
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
@@ -44,10 +42,10 @@ function Header() {
         <header>
             <div className="container">
                 <nav ref={navRef}>
-                    <a href="#" className="nav-logo">
+                    <Link to="/" className="nav-logo">
                         <img src={logo} alt="brand logo" width={30} height={30} />
                         <span>Abdel Healthcare Limited</span>
-                    </a>
+                    </Link>
 
                     <button onClick={toggleMenu} className={`hamburger ${isMenuOpen ? "active" : ""}`} aria-expanded={isMenuOpen.toString()} aria-controls="nav-links"
                         aria-label="Toggle navigation">
@@ -58,13 +56,13 @@ function Header() {
 
                     <div className={`nav-links-container ${isMenuOpen ? "active" : ""}`} id="nav-links">
                         <ul className="nav-links">
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Career</a></li>
-                            <li><a href="#">FAQ</a></li>
+                            <li><Link to="/services" onClick={handleLinkClick}>Services</Link></li>
+                            <li><Link to="/contact" onClick={handleLinkClick}>Contact</Link></li>
+                            <li><Link to="/career" onClick={handleLinkClick}>Career</Link></li>
+                            <li><Link to="/faq" onClick={handleLinkClick}>FAQ</Link></li>
                         </ul>
                     </div>
-                    <button className="pill-shape">Call Us 03045678399</button>
+                    <button className="pill-shape"><img src={phoneIcon} alt={"phone icon"} width={20} height={20} /> Call Us 07404663380</button>
                 </nav>
             </div>
         </header>

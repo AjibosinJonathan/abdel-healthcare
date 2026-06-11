@@ -1,4 +1,4 @@
-import ctaImg from "../assets/cta-img.png"
+import ctaImg from "../assets/cta-img.webp"
 
 function CtaBanner() {
     return(

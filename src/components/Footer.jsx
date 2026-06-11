@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import footerLogo from "../assets/footer-logo.png"
 import facebookIcon from "../assets/facebook-icon.svg"
 import instagramIcon from "../assets/instagram-icon.svg"
@@ -6,54 +7,61 @@ import xTwitterIcon from "../assets/x-twitter-icon.svg"
 
 function Footer() {
     return(
-        <section className="container">
-            <footer className="footer">
-                <div className="footer-logo">
-                    <img src={footerLogo} alt="brand logo" height={367} weight={1150} />
+        <footer className="footer container">
+            <div className="footer-logo">
+                <img src={footerLogo} alt="brand logo" height={367} width={1150} />
+            </div>
+            <div className="footer-grid">
+                <div className="footer-col">
+                    <p className="footer-brand">Abdel Healthcare Ltd</p>
                 </div>
-                <div className="footer-grid">
-                    <div className="footer-col">
-                        <p className="footer-brand">Abdel Healthcare Ltd</p>
-                    </div>
-                    <div className="footer-col">
-                        <h3 className="footer-heading">Links</h3>
-                        <ul className="footer-links">
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Career</a></li>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div className="footer-col">
-                        <h3 className="footer-heading">Services</h3>
-                        <ul className="footer-links">
-                            <li><a href="#">Personal Care</a></li>
-                            <li><a href="#">Dementia Support</a></li>
-                            <li><a href="#">Live-In Care</a></li>
-                            <li><a href="#">Reablement Care</a></li>
-                            <li><a href="#">Supported Living</a></li>
-                            <li><a href="#">Specialist Care</a></li>
-                        </ul>
-                    </div>
-                    <div className="footer-col">
-                        <h3 className="footer-heading">Contact</h3>
-                        <ul className="footer-contact">
-                            <li>Phone: +234 70 3076 9220</li>
-                            <li>Email: info@abdelhealthcare.co.uk</li>
-                            <li>Address: Plot 56, United Kingdom</li>
-                        </ul>
-                        <div className="footer-socials">
+                <div className="footer-col">
+                    <h3 className="footer-heading">Links</h3>
+                    <ul className="footer-links">
+                        <li><Link to="/services">Services</Link></li>
+                        <li><Link to="/career">Career</Link></li>
+                        <li><Link to="/faq">FAQ</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
+                    </ul>
+                </div>
+                <div className="footer-col">
+                    <h3 className="footer-heading">Services</h3>
+                    <ul className="footer-links">
+                        <li><Link to="/services">Personal Care</Link></li>
+                        <li><Link to="/services">Dementia Support</Link></li>
+                        <li><Link to="/services">Live-In Care</Link></li>
+                        <li><Link to="/services">Reablement Care</Link></li>
+                        <li><Link to="/services">Supported Living</Link></li>
+                        <li><Link to="/services">Specialist Care</Link></li>
+                    </ul>
+                </div>
+                <div className="footer-col">
+                    <h3 className="footer-heading">Contact</h3>
+                    <ul className="footer-contact">
+                        <li>Phone: 07404663380</li>
+                        <li>Email: info@abdelhealthcare.co.uk</li>
+                        <li>Address: Plot 56, United Kingdom</li>
+                    </ul>
+                    <div className="footer-socials">
+                        <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
                             <img src={facebookIcon} alt="facebook icon" />
+                        </a>
+                        <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">
                             <img src={instagramIcon} alt="instagram icon" />
+                        </a>
+                        <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer">
                             <img src={youtubeIcon} alt="youtube icon" />
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
                             <img src={xTwitterIcon} alt="x-twitter icon" />
-                        </div>
+                        </a>
                     </div>
+
                 </div>
-                <hr className="footer-divider"/>
-                <p className="footer-copyright">&copy; 2026 Abdel Healthcare Ltd. All Rights Reserved.</p>
-            </footer>
-        </section>
+            </div>
+            <hr className="footer-divider"/>
+            <p className="footer-copyright">&copy; {new Date().getFullYear()} Abdel Healthcare Ltd. All Rights Reserved.</p>
+        </footer>
     );
 }
 
