@@ -39,7 +39,7 @@ function Footer() {
                     <h3 className="footer-heading">Contact</h3>
                     <ul className="footer-contact">
                         <li>Phone: 07404663380</li>
-                        <li>Email: info@abdelhealthcare.co.uk</li>
+                        <li><a href="mailto:info@abdelhealthcare.co.uk">Email: info@abdelhealthcare.co.uk</a></li>
                         <li>Address: Plot 56, United Kingdom</li>
                     </ul>
                     <div className="footer-socials">

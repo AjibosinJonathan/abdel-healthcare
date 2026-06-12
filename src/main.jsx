@@ -4,11 +4,12 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 import Services from './pages/Services.jsx'
+import Contact from './pages/Contact.jsx'
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
   { path: "/services", element: <Services /> },
-  { path: "/contact", element: <h1>Contact Page</h1> },
+  { path: "/contact", element: <Contact /> },
 ], {
   basename: "/abdel-healthcare"
 });
