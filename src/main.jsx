@@ -10,8 +10,8 @@ const router = createBrowserRouter([
   { path: "/", element: <App /> },
   { path: "/services", element: <Services /> },
   { path: "/contact", element: <Contact /> },
-  { path: "/career", element: <h1>Career</h1>},
-  { path: "/faq", element: <h1>FAQ</h1>}
+  { path: "/career", element: <h1>Career</h1> },
+  { path: "/faq", element: <h1>FAQ</h1> }
 ], {
   basename: "/abdel-healthcare"
 });
