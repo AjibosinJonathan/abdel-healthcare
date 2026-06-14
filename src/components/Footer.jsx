@@ -9,7 +9,9 @@ function Footer() {
     return(
         <footer className="footer container">
             <div className="footer-logo">
-                <img src={footerLogo} alt="brand logo" height={367} width={1150} />
+                <Link to="/">
+                    <img src={footerLogo} alt="brand logo" height={367} width={1150} />
+                </Link>
             </div>
             <div className="footer-grid">
                 <div className="footer-col">
@@ -40,7 +42,7 @@ function Footer() {
                     <ul className="footer-contact">
                         <li>Phone: 07404663380</li>
                         <li><a href="mailto:info@abdelhealthcare.co.uk">Email: info@abdelhealthcare.co.uk</a></li>
-                        <li>Address: Plot 56, United Kingdom</li>
+                        <li>Address: Apt 90, 2 Navigation Street, The Horizon Leicester</li>
                     </ul>
                     <div className="footer-socials">
                         <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
