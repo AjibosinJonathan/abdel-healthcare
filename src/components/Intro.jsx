@@ -10,8 +10,8 @@ function Intro() {
                 <div className="intro-grid">
                     <Card
                         img={shieldIcon}
-                        title={"Trusted and Certified"}
-                        text={"Licensed, bonded, and insured healthcare services you can rely on with confidence and peace of mind."}
+                        title={"Trusted and Insured"}
+                        text={"Insured healthcare services you can rely on with confidence and peace of mind."}
                         altText={"Shield icon"}
                     />
                     <Card
