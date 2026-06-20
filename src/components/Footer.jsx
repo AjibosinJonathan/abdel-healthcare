@@ -42,7 +42,7 @@ function Footer() {
                     <ul className="footer-contact">
                         <li>Phone: 07404663380</li>
                         <li><a href="mailto:info@abdelhealthcare.co.uk">Email: info@abdelhealthcare.co.uk</a></li>
-                        <li>Address: 6, St George's Way St George's House, Leicester LE1 1QZ</li>
+                        <li>Address: 3rd Floor, St. George's House, 6 St George's Way, Leicester, LE1 1QZ</li>
                     </ul>
                     <div className="footer-socials">
                         <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
